@@ -1,6 +1,5 @@
 public class Ceelo {
     public Ceelo() {
-
     }
     public void start() {
         System.out.println("Welcome");

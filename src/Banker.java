@@ -3,4 +3,5 @@ public class Banker {
     public Banker() {
         chips = 1000;
     }
+
 }

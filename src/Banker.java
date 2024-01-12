@@ -4,6 +4,6 @@ public class Banker {
         chips = 1000;
     }
     public void myTurn() {
-        Die.roll();
+
     }
 }

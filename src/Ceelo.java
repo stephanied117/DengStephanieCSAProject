@@ -18,19 +18,56 @@ public class Ceelo {
     }
     public void screen() {
         Scanner scan = new Scanner(System.in);
-        System.out.println("");
-        String[] begin = {"    WELCOME", "      to", "      the", "CEE-LO DICE GAME"};
-        for (String word : begin) {
-            System.out.println(word);
-            try {
-                Thread.sleep(500);
-            } catch (Exception e) {
-
-            }
-        }
-        System.out.println();
-        System.out.println("{Enter x to play}");
         String rmvMenu = scan.nextLine();
+        int tracker = 0;
+        while (!(rmvMenu.equals("x"))) {
+            if (tracker % 2 == 0) {
+                for (int i = 0; i < 7; i++) {
+                    System.out.print(ConsoleUtility.RED + "- ");
+                    System.out.print(ConsoleUtility.WHITE + "- ");
+                }
+                System.out.print(ConsoleUtility.RED + "- ");
+                System.out.println(ConsoleUtility.WHITE + "- ");
+                String[] begin = {"  \uD83C\uDFB2         The        \uD83C\uDFB2  ", "      CEE-LO DICE GAME       "};
+                System.out.print(ConsoleUtility.WHITE + "|");
+                System.out.print(ConsoleUtility.RESET + begin[0]);
+                System.out.println(ConsoleUtility.RED + "|");
+                System.out.print(ConsoleUtility.RED + "|");
+                System.out.print(ConsoleUtility.RESET + begin[1]);
+                System.out.println(ConsoleUtility.WHITE + "|");
+                for (int i = 0; i < 7; i++) {
+                    System.out.print(ConsoleUtility.RED + "- ");
+                    System.out.print(ConsoleUtility.WHITE + "- ");
+                }
+                System.out.print(ConsoleUtility.RED + "- ");
+                System.out.println(ConsoleUtility.WHITE + "- ");
+                System.out.println();
+                System.out.println(ConsoleUtility.WHITE + "       {Enter x to play}");
+            } else {
+                for (int i = 0; i < 7; i++) {
+                    System.out.print(ConsoleUtility.WHITE + "- ");
+                    System.out.print(ConsoleUtility.RED + "- ");
+                }
+                System.out.print(ConsoleUtility.WHITE + "- ");
+                System.out.println(ConsoleUtility.RED + "- ");
+                String[] begin = {"  \uD83C\uDFB2         The        \uD83C\uDFB2  ", "      CEE-LO DICE GAME       "};
+                System.out.print(ConsoleUtility.RED + "|");
+                System.out.print(ConsoleUtility.RESET + begin[0]);
+                System.out.println(ConsoleUtility.WHITE + "|");
+                System.out.print(ConsoleUtility.WHITE + "|");
+                System.out.print(ConsoleUtility.RESET + begin[1]);
+                System.out.println(ConsoleUtility.RED + "|");
+                for (int i = 0; i < 7; i++) {
+                    System.out.print(ConsoleUtility.WHITE + "- ");
+                    System.out.print(ConsoleUtility.RED + "- ");
+                }
+                System.out.print(ConsoleUtility.WHITE + "- ");
+                System.out.println(ConsoleUtility.RED + "- ");
+                System.out.println();
+                System.out.println(ConsoleUtility.WHITE + "       {Enter x to play}");
+            }
+            tracker++;
+        }
         if (rmvMenu.equals("x")) {
             ConsoleUtility.clearScreen();
             objective();

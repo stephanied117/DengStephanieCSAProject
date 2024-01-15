@@ -18,7 +18,8 @@ public class Ceelo {
     }
     public void screen() {
         Scanner scan = new Scanner(System.in);
-        String[] begin = {"   WELCOME", "     to", "     the", "CEE-LO DICE GAME"};
+        System.out.println("");
+        String[] begin = {"    WELCOME", "      to", "      the", "CEE-LO DICE GAME"};
         for (String word : begin) {
             System.out.println(word);
             try {
@@ -44,21 +45,33 @@ public class Ceelo {
         String rmvMenu = scan.nextLine();
         if (rmvMenu.equals("k")) {
             ConsoleUtility.clearScreen();
+            setUp();
         }
     }
     public void setUp() {
         Scanner scan = new Scanner(System.in);
-        String message = "Player 1, what's your name?";
-        blurbSpitter(message, 100);
+        String banker = "G'day to y'all...I am BOB The Banker!\nI see you three little lads want to challenge me. ";
+        blurbSpitter(banker, 75);
+
+        String message = "Player 1, what's your name? ";
+        blurbSpitter(message, 75);
         String name = scan.nextLine();
         Player player1 = new Player(name);
-        message = "Nice to meet you, ";
-        blurbSpitter(message, 100);
-        System.out.println();
-        System.out.println("{Enter k when done}");
-        String rmvMenu = scan.nextLine();
-        if (rmvMenu.equals("k")) {
-            ConsoleUtility.clearScreen();
-        }
+        message = "It's " + name + ", sir.";
+        blurbSpitter(message, 75);
+        banker = "Nice to meet you, " + name + ". \nHow about Player 2? ";
+        blurbSpitter(banker, 75);
+        name = scan.nextLine();
+        Player player2 = new Player(name);
+        message = "I am " + name + ". ";
+        blurbSpitter(message, 75);
+        banker = "Good to know, " + name + ". \nAnd lastly, Player 3? ";
+        blurbSpitter(banker, 75);
+        name = scan.nextLine();
+        Player player3 = new Player(name);
+        message = "My name is " + name + ". ";
+        blurbSpitter(message, 75);
+        banker = "So it's " + name + "... ";
+        blurbSpitter(banker, 75);
     }
 }
